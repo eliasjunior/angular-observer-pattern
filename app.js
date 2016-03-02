@@ -10,8 +10,6 @@
 				messageService.fire({message:"Hello Angular", type:'danger'})
 			}, 2000)	
 
-		
-	
 		}])
 
 })();
