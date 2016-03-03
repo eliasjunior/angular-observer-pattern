@@ -16,7 +16,7 @@ Function.prototype.method = function(name, func) {
 
 Function.method(‘inherits’, function(Parent){
 	this.prototype = new Parent()
-      return this;
+    return this;
 });
 
 //return int, for not get invalid function when is not a String, also convert double to integer i.e. 1.4 = 1
