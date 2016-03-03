@@ -7,12 +7,8 @@
 
     function messageService() {
 
-        var
+        var listSubscribers = [];
          
-          subscribeObj = {
-            listSubscribers : [],
-            alert : {},
-          }
 
         var publicAccess = {
             addSubscriber : addSubscriber,
@@ -21,13 +17,13 @@
 
         function addSubscriber(newSubscriber) {
             if(newSubscriber) {
-                subscribeObj.listSubscribers.push(newSubscriber);
+                listSubscribers.push(newSubscriber);
             }
         }
 
         function fire(alertParam) {
             
-            angular.forEach(subscribeObj.listSubscribers, function(subscribeItemCallBack) {
+            angular.forEach(listSubscribers, function(subscribeItemCallBack) {
 
                 subscribeItemCallBack(alertParam);
 

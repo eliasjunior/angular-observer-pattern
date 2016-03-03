@@ -6,9 +6,10 @@
 		.controller('myController', ['messageService', '$timeout', function(messageService, $timeout){
 
 
+			//small delay to show the message
 			$timeout(function(){
 				messageService.fire({message:"Hello Angular", type:'danger'})
-			}, 2000)	
+			}, 1000)	
 
 		}])
 
