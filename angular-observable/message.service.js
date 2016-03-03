@@ -8,7 +8,6 @@
     function messageService() {
 
         var listSubscribers = [];
-         
 
         var publicAccess = {
             addSubscriber : addSubscriber,
@@ -28,7 +27,6 @@
                 subscribeItemCallBack(alertParam);
 
             });
-
         }
 
         return publicAccess;
