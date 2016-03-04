@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular</title>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body ng-app="app">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+
+	<script src="app.js"></script>
+
+	<div >
+		<div ng-controller="myController as vm">
+		
+			<button class="btn btn-success"  ng-click="vm.case1()">Case 1</button>	
+			<button class="btn btn-success"  ng-click="vm.case2()">Case 2</button>	
+			<button class="btn btn-success"  ng-click="vm.case3()">Case 3</button>	
+
+			<div>
+	
+				<h1>{{vm.view.title}}</h1> 
+
+				<div ng-include="vm.view.templateUrl"></div>
+
+				<div ng-if="vm.view.showFirstBlock">
+					showFirstBlock 
+				</div>
+
+				<div ng-if="vm.view.showList">
+					<ul>
+						<li>L1</li>
+						<li>L2</li>
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
