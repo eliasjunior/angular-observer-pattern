@@ -1,5 +1,5 @@
-Factory View
+Factory View with AngularJS
 
-This factory is based on the view cases, it displays automatically the components you want to show.
+Factory view is based on creation of objects to display components that rely on state changes
 
-Ideal for view that changes a lot depending on the case, instead add many conditions on each component let the model tell the view what to show.
+
