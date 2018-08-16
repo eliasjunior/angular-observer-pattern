@@ -4,7 +4,9 @@ function parentComponent(messageService, $timeout) {
         message: 'Hello Angular', 
         type: 'danger'
     };
-	$timeout(() => messageService.fire(notification), 500);	
+    // simulating ajax call request
+    $timeout(() => messageService
+        .fireNotification(notification), 500);	
 }
 angular
     .module('app')

@@ -1,17 +1,17 @@
 function messageService() {
     let listSubscribers = [];
     return {
-        addSubscriber(newSubscriber) {
+        addNotificationSubscriber(newSubscriber) {
             if(newSubscriber) {
                 listSubscribers.push(newSubscriber);
             }
         },
-        fire(alertParam) {
+        fireNotification(alertParam) {
             angular.forEach(listSubscribers, function(subscribeItemCallBack) {
                 subscribeItemCallBack(alertParam);
             });
         },
-        unsubscribe(fn) {
+        unSubscribeNotification(fn) {
             listSubscribers = listSubscribers.filter(fnItem => fnItem !== fn);
         }
     };

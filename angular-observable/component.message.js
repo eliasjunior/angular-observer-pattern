@@ -1,14 +1,13 @@
-function messageAlertComponent($timeout, messageService) {
-    //when it loads, the component subscribes a callback 
+function messageAlertComponent(messageService) {
     const vm = this;
     const notificationCallback = _notification_ => {
         vm.notification = _notification_;
         vm.style = 'alert-' + (vm.notification.type === 'danger' ? 'danger' : 'success');
     }
-    messageService.addSubscriber(notificationCallback);
+    messageService.addNotificationSubscriber(notificationCallback);
 
     vm.$onDestroy = () => {
-        messageService.unsubscribe(notificationCallback);    
+        messageService.unSubscribeNotification(notificationCallback);    
     };
     vm.onChangeSuccess = () => {
         vm.style = 'alert-success';
