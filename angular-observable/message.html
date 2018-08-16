@@ -1,4 +1,9 @@
-<div class="alert" ng-class="{'alert-success' : notification.type === 'success', 'alert-danger' : notification.type === 'danger'}" role="alert">
-  {{notification.message}} 
+<div class="alert" ng-class="vm.style" role="alert">
+  {{vm.notification.message}}
 </div>
-<!-- <div class="alert alert-success" role="alert">test</div> -->
+<button class="btn btn-success" ng-click="vm.onChangeSuccess()">
+  Success
+</button>
+<button class="btn btn-primary" ng-click="vm.onChangeAlert()">
+  Error
+</button>

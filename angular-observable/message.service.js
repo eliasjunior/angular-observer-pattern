@@ -1,34 +1,21 @@
-/**
- * Created by eliasmj on 11/01/2016.
- */
-(function () {
-    'use strict';
-    angular.module("app").factory("messageService", messageService);
-
-    function messageService() {
-
-        var listSubscribers = [];
-
-        var publicAccess = {
-            addSubscriber : addSubscriber,
-            fire : fire
-        };
-
-        function addSubscriber(newSubscriber) {
+function messageService() {
+    let listSubscribers = [];
+    return {
+        addSubscriber(newSubscriber) {
             if(newSubscriber) {
                 listSubscribers.push(newSubscriber);
             }
-        }
-
-        function fire(alertParam) {
-            
+        },
+        fire(alertParam) {
             angular.forEach(listSubscribers, function(subscribeItemCallBack) {
-
                 subscribeItemCallBack(alertParam);
-
             });
+        },
+        unsubscribe(fn) {
+            listSubscribers = listSubscribers.filter(fnItem => fnItem !== fn);
         }
-
-        return publicAccess;
-    }
-})();
+    };
+}
+angular
+    .module("app")
+    .factory("messageService", messageService);

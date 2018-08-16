@@ -2,21 +2,23 @@
 <html>
 <head>
 	<title>Angular</title>
-	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+		rel="stylesheet">
+	<style>
+		body {
+			margin: 5px;
+		}
+	</style>	
 </head>
 <body>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
-
-	<script src="app.js"></script>
-	<script src="message.service.js"></script>
-	<script src="directive.message.js"></script>
+	<script src="http://code.angularjs.org/1.7.3/angular.min.js"></script>
+	<script src="./app.js"></script>
+	<script src="./parent.component.js"></script>
+	<script src="./message.service.js"></script>
+	<script src="./component.message.js"></script>
 
 	<div ng-app="app">
-		<div ng-controller="myController">
-		
-			<message></message>			
-
-		</div>
+		<parent-component></parent-component>
 	</div>
 </body>
 </html>
